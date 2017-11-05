@@ -12,28 +12,44 @@
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
+        <!-- left visualization-->
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border Grid.Row="0" Margin="8" BorderBrush="Red" BorderThickness="1">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                     <Image Height="40" Source="images\Warning-WF.png" />
                     <Label Content="Überlauf Grenzwasser" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Border>
-        </Grid>
-            <StackPanel Grid.Column="1">
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Height="40" Source="images\Cloud sun02-WF.png" HorizontalAlignment="Center" Margin="8"/>
-                    <Label Content="20 °" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="8"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Label Content="Aktoren" Background="Black" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <DataGrid Background="White" MinHeight="280" AutoGenerateColumns="True" />
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <Button Content="Hinzufügen" BorderBrush="White" Foreground="White" Height="50" Background="Black" Margin="7" />
+                    <Button Content="Löschen" BorderBrush="White" Foreground="White" Height="50" Background="Black" Margin="7" />
                 </StackPanel>
-            <Border BorderThickness="0,0,0,1" BorderBrush="White">
-            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Height="40" Source="images\Wind.png" Margin="8"/>
-                <Label Content="12 km/h" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="8"/>
+                <Label Content="Sensoren" Background="Black" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <DataGrid Background="White" MinHeight="280" AutoGenerateColumns="True" />
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <Button Content="Hinzufügen" BorderBrush="White" Foreground="White" Height="50" Background="Black" Margin="7" />
+                    <Button Content="Löschen" BorderBrush="White" Foreground="White" Height="50" Background="Black" Margin="7" />
+                </StackPanel>
             </StackPanel>
+        </Grid>
+        <!--right menu-->
+        <StackPanel Grid.Column="1">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                <Image Height="40" Source="images\Cloud sun02-WF.png" HorizontalAlignment="Center" Margin="8"/>
+                <Label Content="20 °" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="8"/>
+            </StackPanel>
+            <Border BorderThickness="0,0,0,1" BorderBrush="White">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                    <Image Height="40" Source="images\Wind.png" Margin="8"/>
+                    <Label Content="12 km/h" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="8"/>
+                </StackPanel>
             </Border>
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
                 <Image Height="40" Source="images\Solar.png" HorizontalAlignment="Center" Margin="8"/>
@@ -75,9 +91,9 @@
             </StackPanel>
             <Border BorderThickness="0,0,0,1" BorderBrush="White">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                <Label Content="12:30" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <Label Content="12.12.2018" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </StackPanel>
+                    <Label Content="12:30" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="12.12.2018" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Border>
         </StackPanel>
     </Grid>
