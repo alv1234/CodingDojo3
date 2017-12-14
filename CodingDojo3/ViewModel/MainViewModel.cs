@@ -1,4 +1,8 @@
+using CodingDojo3.DataSimulation;
 using GalaSoft.MvvmLight;
+using Shared.Interfaces;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace CodingDojo3.ViewModel
 {
@@ -16,19 +20,28 @@ namespace CodingDojo3.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
+        public List<ItemVM> modelItems = new List<ItemVM>();
+
+        public ObservableCollection<ItemVM> SensorList = new ObservableCollection<ItemVM>();
+        public ObservableCollection<ItemVM> ActorList = new ObservableCollection<ItemVM>();
+
+
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            Simulator sim = new Simulator(modelItems);
+            foreach (var item in sim.Items)
+            {
+                if (item.ItemType.Equals(typeof(ISensor)))
+                    SensorList.Add(item);
+                else if (item.ItemType.Equals(typeof(IActuator)))
+                    ActorList.Add(item);
+            }
+
         }
     }
 }
